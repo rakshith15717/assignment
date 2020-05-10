@@ -30,5 +30,5 @@ for line in sys.stdin:
         word_count += int(val)
     except:
         continue
-print_key = word + (" ," )+ doc_name
+print_key = word + " ," + doc_name
 print ('%s\t%s' % (print_key, word_count))
