@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May 10 18:44:47 2020
-
-@author: rakshith
-"""
-
 #!/usr/bin/env python
 from __future__ import division
 import sys
@@ -49,8 +42,8 @@ corpus_word_count_dict[old_word] = corpus_word_count
 
 # Computing TF-IDF
 for word in corpus_word_count_dict.keys():
-    word_stats_list = word_stats_dict[word]
-    for word_stats in word_stats_list:
+    
+    for word_stats in list():
         word_stats = word_stats.split(",")
         try :
           term_frequency = int(word_stats[WORD_COUNT_IDX])/int(word_stats[WORDS_IN_DOC_IDX])
@@ -58,8 +51,7 @@ for word in corpus_word_count_dict.keys():
           tf_idf = term_frequency * inverse_doc_freq
           print_key = word + "," + word_stats[DOC_NAME_IDX]
           if (word == "health"):
-             print("%s\t%s" % (print_key, tf_idf))
+              print("%s\t%s" % (print_key, tf_idf))
         except ZeroDivisionError as ex:
           print (word_stats[WORDS_IN_DOC_IDX])
           print ("Error", ex)
-
